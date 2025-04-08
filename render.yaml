@@ -3,7 +3,9 @@ services:
   - type: web
     name: stocksight-backend
     env: python
-    buildCommand: pip install -r backend/requirements.txt
+    region: singapore
+    plan: free
+    buildCommand: cd backend && pip install -r requirements.txt
     startCommand: cd backend && gunicorn run:app
     envVars:
       - key: MAIL_USERNAME
@@ -12,3 +14,5 @@ services:
         value: liye innd pwux jntl
       - key: MONGODB_URI
         value: mongodb+srv://aimi_admin:SC2006t3@cluster0.frqdlsi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: PYTHON_VERSION
+        value: 3.9.18
