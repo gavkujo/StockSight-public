@@ -1,0 +1,14 @@
+services:
+  # Backend API service only
+  - type: web
+    name: stocksight-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && gunicorn run:app
+    envVars:
+      - key: MAIL_USERNAME
+        value: sc2006t3@gmail.com
+      - key: MAIL_PASSWORD
+        value: liye innd pwux jntl
+      - key: MONGODB_URI
+        value: mongodb+srv://aimi_admin:SC2006t3@cluster0.frqdlsi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
